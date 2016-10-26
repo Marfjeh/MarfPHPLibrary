@@ -3,7 +3,7 @@ A planned project. This is a Php Library ONLY providing tools not make the hole 
 
 Notice: The files that are now uploaded can change directorys. At this stage MarfPhpLibrary is not functional yet.
 
-#Current build information
+#Current version information
 
 <b>Build date: N/A</b>
 
