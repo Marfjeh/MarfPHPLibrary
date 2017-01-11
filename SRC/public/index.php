@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MarfPHPLibrary 0.1</title>
+    <title>MarfPHPLibrary 0.2</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -54,12 +54,12 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title m-b-md">
-            MarfPHPLibrary 0.1
+            MarfPHPLibrary 1 Alpha
         </div>
 
         <div class="links">
-            <a href="#">Documentation</a>
-            <a href="#">Github</a>
+            <a href="https://github.com/Marfjeh/MarfPHPLibrary/wiki">Documentation</a>
+            <a href="https://github.com/Marfjeh/MarfPHPLibrary">Github</a>
         </div>
     </div>
 </div>
