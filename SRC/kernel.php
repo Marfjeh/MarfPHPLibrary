@@ -38,10 +38,17 @@ class kernel {
 
         if (isset($_GET["page"]))
         {
-	        $pagina = "public/" . $_GET["page"] . ".php";
+	        $pagina = $_GET["page"] . ".php";
             if (file_exists($pagina)) 
             {
-	            include($pagina);
+	            //include($pagina);
+                $loader = new Twig_Loader_Filesystem('./public');
+                $twig = new Twig_Environment($loader, array(
+                    'cache' => './cache',
+                ));
+                $template = $twig->loadTemplate($pagina);
+                echo $template->render(array('name' => 'MarfPHPLibrary 0.2 Alpha'));
+
             }
             else
             {

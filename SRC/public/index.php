@@ -54,7 +54,7 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title m-b-md">
-            MarfPHPLibrary 1 Alpha
+            {{ name }}
         </div>
 
         <div class="links">
