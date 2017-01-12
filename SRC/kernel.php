@@ -1,11 +1,9 @@
 <?php
-error_reporting(1);
-
 //Load libs
-require_once("./lib/mff.class.php");
-require_once("./lib/database.class.php");
-require_once("./lib/error.class.php");
-//require_once("./lib/route.class.php");
+require_once("./vendor/marfphplib/Marf/mff.class.php");
+require_once("./vendor/marfphplib/MegaXLR/database.class.php");
+require_once("./vendor/marfphplib/Marf/error.class.php");
+require_once('./vendor/autoload.php'); //Yes we're going to use it...
 //end libs
 
 
@@ -19,16 +17,31 @@ class kernel {
     public function openDb() {
         $db = new Database();
     }
-    public function run() {
-        $this->loadpage(); //This should use the routing class instead. but for now it's here.
+
+    public function runSQL($sql) {
+
     }
-    public function loadpage() {
+
+    public function Bootstrapper() {
+        $this->pageloader();
+    }
+
+
+    public function pageloader() {
+        /*
+         * @Title MarfPhpLib PageLoader Kernel module
+         * @Author Marvin Ferwerda
+         * @Description This allows to load pages in the public/ folder, this is however used for a test.
+         *              and will be removed in future releases. The proper way will be a file where you
+         *              set the pages in a list, and a url like laravel.
+         */
+
         if (isset($_GET["page"]))
         {
-	        $pagina = $_GET["page"] . ".php";
+	        $pagina = "public/" . $_GET["page"] . ".php";
             if (file_exists($pagina)) 
             {
-	            include("public/" . $pagina);
+	            include($pagina);
             }
             else
             {
@@ -40,20 +53,25 @@ class kernel {
         //This allows to load a page stored in MySQL database. this will only load the page and can't do anything to it. This however will use a diffrent Get request name
         if(isset($_GET['db']))
         {
-            echo("Not implemented right now");
+            echo("Warning: Not implemented right now");
         }
 
-        if(isset($_GET['debug']))
+        if (isset($_GET['twigtest']))
         {
-            echo (ini_get('display_errors'));
+            $loader = new Twig_Loader_Array(array(
+            'index' => 'Hello {{ name }}!',
+            ));
+
+            $twig = new Twig_Environment($loader);
+
+            echo $twig->render('index', array('name' => 'MarfPhpLib'));
         }
 
-
-        if(isset($_GET["page"]) == false && isset($_GET['db']) == false && isset($_GET['debug']) == false)
+        if(isset($_GET["page"]) == false && isset($_GET['db']) == false && isset($_GET['twigtest']) == false)
         {
             include("public/index.php");
         }
     }
 }
 $kernel = new kernel();
-$kernel->run();
+$kernel->Bootstrapper();
