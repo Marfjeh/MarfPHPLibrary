@@ -1,13 +1,13 @@
 # MarfPHPLibrary
-A planned project. This is a Php Library ONLY providing tools not make the hole system retarded. Yes i'm looking to you Synfomy, or like that.
+This is a Minimal Php Library ONLY providing tools not make the hole system retarded. Yes i'm looking to you Synfomy, or a framework just like synfomy.
 
-Notice: The files that are now uploaded can change directorys. At this stage MarfPhpLibrary is not functional yet.
+Notice: The files that are now uploaded can change directorys. At this stage MarfPhpLibrary is functional!
 
 #Current version information
 
-<b>Build date: N/A</b>
+<b>Build date: 20-1-2017</b>
 
-<b>Current version on Github: N/A</b>
+<b>Current version on Github: 0.3 Alpha</b>
 
 <b>Latest release version: N/A</b>
 
