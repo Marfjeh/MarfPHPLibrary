@@ -1,3 +1,5 @@
+#Project Discontuined. It was only a project for fun. 
+
 # MarfPHPLibrary
 This is a Minimal Php Library ONLY providing tools not make the hole system retarded. Yes i'm looking to you Synfomy, or a framework just like synfomy.
 
